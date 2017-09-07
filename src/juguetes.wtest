@@ -1,0 +1,16 @@
+import AmigoFiel.*
+
+describe "Prueba de juguetes" {
+	
+test "Moolly juega con woody y su felicidad queda en 493" {
+	molly.manotear(woody)
+	assert.equals(493, molly.felicidad())
+}
+
+test "Moolly juega con buzz y su felicidad queda en el maximo que es 500" {
+	molly.manotear(buzz)
+	assert.equals(500, molly.felicidad())
+}
+
+
+}
