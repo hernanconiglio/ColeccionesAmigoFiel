@@ -41,14 +41,15 @@ Molly, la hermana de Andy, también posee su nivel de felicidad que comienza con
 Vamos a agregar al modelo un juguete más que es de Molly, aunque le gusta dejarlo en el cuarto de Andy:
 - _barbie_: No nos interesa saber su nivel de pintura ya que está fabricado con un material que no se deteriora. No posee nivel de energía ni potenciador. Y puede ser seleccionado por Andy para su juego y también lo puede usar Molly. (Ayudita: revisar si hay métodos polimórficos)
 <br>
+
 Además todos los juguetes saben decir cual es su `nombreOriginal()` según corresponda: 
 "El vaquero Woody","Buzz Lightyear","Rex","La Barbie Guia" <br>
 
-Entonces, también podemos preguntarle a Andy que nos diga el nombre de todos los juguetes que eligió para jugar su aventura `nombresJuguetes()`
+Entonces, también podremos preguntarle a Andy que nos diga el nombre de todos los juguetes que eligió para jugar su aventura `nombresJuguetes()`
 
 <br>
 <br>
-Con el paso del tiempo y los juegos, Andy se dan cuenta que algunos de los juguetes necesitan algo de mantenimiento. <br>
+Con el paso del tiempo y los juegos, Andy se da cuenta que algunos de los juguetes necesitan algo de mantenimiento. <br>
 Entonces vamos a recurrir a un nuevo personaje:
 <br>
 
