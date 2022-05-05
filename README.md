@@ -22,7 +22,7 @@ Primero vamos a conocer las cosas que puede hacer Andy:
 - `perderJuguete(juguete)`: Lo pierde de vista en su cuarto y ya no puede jugar con él.
 - `aburrirse(minutos)`: Según la cantidad de minutos, la felicidad de Andy disminuye en 10 por cada minuto de aburrimiento. Su felicidad no puede ser menos que cero. 
 - `dormir()`: Cuando Andy duerme, su felicidad se restaura a su valor inicial.
-- `jugar()`: Andy juega con todos los juguetes que agarró de su cuarto. 
+- `jugar()`: Andy juega con todos los juguetes que agarró de su cuarto sin importar su estado.
 - `pasarLaNoche()`: Andy duerme y además aumenta su felicidad 20 veces por cada juguete que agarró de su cuarto y que esté en buen estado.
 
 En el cuarto de Andy podemos encontrarnos con los siguientes juguetes que él podría agarrar:
