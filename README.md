@@ -24,6 +24,7 @@ Primero vamos a conocer las cosas que puede hacer Andy:
 - `aburrirse(minutos)`: Según la cantidad de minutos, la felicidad de Andy disminuye en 10 por cada minuto de aburrimiento. Su felicidad no puede ser menos que cero. 
 - `dormir()`: Cuando Andy duerme, su felicidad se restaura a su valor inicial.
 - `jugar()`: Andy juega con todos los juguetes que agarró de su cuarto sin importar su estado.
+- `juegaConMuniecas()`: No le aporta felicidad jugar con muniecas, por lo tanto cuando se lo preguntamos nos responde falso.
 - `pasarLaNoche()`: Andy duerme y además aumenta su felicidad 20 veces por cada juguete que agarró de su cuarto y que esté en buen estado.
 
 En el cuarto de Andy podemos encontrarnos con los siguientes juguetes que él podría agarrar:
@@ -38,7 +39,9 @@ Incorporamos a la hermana de andy:
 <br>
 ### molly
 <img src="https://static.miraheze.org/drawnfeetwiki/8/80/367230_1264713620292_full.jpg" width="150"/>
-Molly, la hermana de Andy, también posee su nivel de felicidad que comienza con 400 y sabe decirnos su `nivelFelicidad()`. Como todavía es una beba, y le encanta llevar de un lado a otro de la casa sus juguetes, suele dejarlos en el cuarto de Andy y además puede `manotear` alguno de los juguetes que Andy eligió para su aventura o que están en el cuarto aunque no los haya elegido Andy, pero solo puede jugar con 1 juguete a la vez. Cada vez que Molly manotea un juguete, se produce el mismo efecto que si jugara Andy con ese juguete. <br>
+Molly, la hermana de Andy, también posee su nivel de felicidad que comienza con 400 y sabe decirnos su `nivelFelicidad()`. Como todavía es una beba, y le encanta llevar de un lado a otro de la casa sus juguetes, suele dejarlos en el cuarto de Andy y además puede `manotear` alguno de los juguetes que Andy eligió para su aventura o que están en el cuarto aunque no los haya elegido Andy, pero solo puede jugar con 1 juguete a la vez. Cada vez que Molly manotea un juguete, juega con él aunque lo tenga Andy (Andy y Molly se llevan muy bien. <br>
+
+Molly sabe responder también al mensaje `juegaConMuniecas()`: cuando se lo preguntamos nos responde true.
 
 Vamos a agregar al modelo un juguete más que es de Molly, aunque le gusta dejarlo en el cuarto de Andy:
 - _barbie_: No nos interesa saber su nivel de pintura ya que está fabricado con un material que no se deteriora. No posee nivel de energía ni potenciador. Y puede ser seleccionado por Andy para su juego (no le aporta felicidad) pero cuando lo usa Molly le suma 50 de felicidad.
