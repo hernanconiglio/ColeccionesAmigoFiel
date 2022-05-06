@@ -19,7 +19,7 @@ Nuestro amigo tiene en su cuarto varios juguetes que los irá agarrando para lue
 
 Primero vamos a conocer las cosas que puede hacer Andy:
 - `nivelFelicidad()`: Andy sabe demostrar cual es su nivel de felicidad, y nos dice en que valor está.
-- `agarrarJuguete(juguete]`: Lo toma de su cuarto para usarlo en su aventura.
+- `agarrarJuguete(juguete)`: Lo toma de su cuarto para usarlo en su aventura.
 - `perderJuguete()`: Pierde de vista al último juguete que agarró y ya no puede jugar con él.
 - `aburrirse(minutos)`: Según la cantidad de minutos, la felicidad de Andy disminuye en 10 por cada minuto de aburrimiento. Su felicidad no puede ser menos que cero. 
 - `dormir()`: Cuando Andy duerme, su felicidad se restaura a su valor inicial.
@@ -41,7 +41,7 @@ Incorporamos a la hermana de andy:
 <img src="https://static.miraheze.org/drawnfeetwiki/8/80/367230_1264713620292_full.jpg" width="150"/>
 
 Molly, la hermana de Andy, también posee su nivel de felicidad que comienza con 400 y sabe demostrarnos su `nivelFelicidad()` cuando se lo preguntamos.
-Como todavía es una beba, y le encanta llevar de un lado a otro de la casa sus juguetes, suele dejarlos en el cuarto de Andy y además puede `manotear` alguno de los juguetes que Andy eligió para su aventura o que están en el cuarto aunque no los haya elegido Andy, pero solo puede jugar con 1 juguete a la vez. Cada vez que Molly manotea un juguete, juega con él aunque lo tenga Andy (Andy y Molly se llevan muy bien. <br>
+Como todavía es una beba, y le encanta llevar de un lado a otro de la casa sus juguetes, suele dejarlos en el cuarto de Andy y además puede `manotear` alguno de los juguetes que Andy eligió para su aventura o que están en el cuarto aunque no los haya elegido Andy, pero solo puede jugar con 1 juguete a la vez. Cada vez que Molly manotea un juguete, juega con él aunque lo tenga Andy (Andy y Molly se llevan muy bien). <br>
 
 Molly sabe responder también al mensaje `juegaConMuniecas()`: cuando se lo preguntamos nos responde true.
 
