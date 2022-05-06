@@ -2,8 +2,10 @@ object andy{
 	var juguetes = []
 	var felicidad = 200
 	
+	method nivelFelicidad() = felicidad
+	
 	method jugar(){
-		juguetes.foreach{j=>j.jugar(self)}
+		juguetes.forEach{j=>j.jugar(self)}
 	}
 
 //	method jugar2(){
@@ -19,7 +21,7 @@ object andy{
 	}
 	
 	method aburrirse(minutos){
-		return felicidad - 10*minutos
+		felicidad -= 10*minutos
 	}
 	method dormir(){
 		felicidad = 200
@@ -38,11 +40,16 @@ object andy{
 	method nombresJuguetes() {
 		return juguetes.map{j=>j.nombreOriginal()}
 	}
+	
+	method arreglarJuguetes() {
+		juguetes.forEach( { j=>reparador.reparar(j)} )
+	}
+	method juegaConMuniecas() = false
 }
 
 object woody{
-	var pintura = 100
-	var frasesDelCordon = ["Hay una serpiente en mi bota", "Alguien enveneno el abrevadero", "Corre como el viento Tiro al Blanco"]
+	var property pintura = 100
+	const frasesDelCordon = ["Hay una serpiente en mi bota", "Alguien enveneno el abrevadero", "Corre como el viento Tiro al Blanco"]
 	method nombreOriginal(){
 		return "El Vaquero Woody"
 	}
@@ -53,12 +60,12 @@ object woody{
 		frasesDelCordon.add(frase)
 	}
 	method jugar(persona){
-		 pintura -= 5
+		 pintura -= 10
 		 persona.aumentarFelicidad(self.cantidadLetras())
 	}
 		
 	method sufriLosEfectosQueAlguienJugoConVos() {
-	   pintura -= 5
+	   pintura -= 10
 	}
 	method felicidadQueDaCuandoAlguienJuega() {
 	   return self.cantidadLetras()
@@ -76,7 +83,7 @@ object woody{
 }
 
 object buzz{
-	var energia = 100
+	var property energia = 100
 	method nombreReal(){
 		return "Buzz Lightyear"
 	}
@@ -85,7 +92,7 @@ object buzz{
 		energia = energia / 2
 	}
 	method tirarRayos(cantidad){
-		energia += cantidad*20
+		energia += cantidad*5
 	}
 	method jugar(persona){
 		self.volar(persona)
@@ -94,10 +101,10 @@ object buzz{
 		self.tirarRayos(1)
 	}
 	method buenEstado(){
-		return energia > 100
+		return energia > 50
 	}
 	method reparar() {
-		energia = 200
+		energia = 100
 	}
 }
 
@@ -137,16 +144,19 @@ object molly {
 		felicidad += cantidad
 		felicidad = felicidad.min(500)
 	}
-	method felicidad() {
+	method nivelFelicidad() {
 		return felicidad 
 	}
+	method juegaConMuniecas() = true
 	
 }
 
 object barbie {
 	method buenEstado() = true
 	
-	method jugar(persona){}
+	method jugar(persona) {
+		if(persona.juegaConMuniecas()) persona.aumentarFelicidad(50) 
+	}
 	
 	method nombreOriginal() = "la barbie guia"
 	
@@ -159,4 +169,5 @@ object reparador {
 		juguete.reparar()
 	}
 	method aumentarFelicidad(cantidad) { }
+	method juegaConMuniecas() = false
 }

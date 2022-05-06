@@ -2,15 +2,86 @@ import AmigoFiel.*
 
 describe "Prueba de juguetes" {
 	
+	method primeraEscena() {
+		andy.agarrarJuguete(woody)
+		andy.agarrarJuguete(buzz)
+		andy.jugar()
+	}
+	method segundaEscena() {
+		self.primeraEscena()
+		andy.perderJuguete()
+		andy.agarrarJuguete(rex)
+		andy.jugar()
+	}	
+	method tercerEscena() {
+		self.segundaEscena()	
+		andy.agarrarJuguete(buzz)
+		andy.jugar()
+	}
+	method cuartaEscena() {
+		self.tercerEscena()
+		andy.aburrirse(30)
+	}
+	method quintaEscena() {
+		self.cuartaEscena()	
+		andy.perderJuguete()
+		andy.perderJuguete()
+		andy.perderJuguete()
+		andy.dormir()
+	}
+	method sextaEscena() {
+		rex.jugarVideojuegos()
+		rex.jugarVideojuegos()
+		rex.cambiarCompaniero(buzz)
+		andy.agarrarJuguete(rex)
+		andy.jugar()
+	}
+	method septimaEscena() {
+		self.sextaEscena()
+		molly.manotear(barbie)
+	}
+	method octavaEscena() {
+		self.septimaEscena()
+		molly.manotear(woody)
+	}
+	method novenaEscena() {
+		self.octavaEscena()
+		andy.pasarLaNoche()
+	}
+	method decimaEscena() {
+		self.novenaEscena()
+		reparador.restaurar(woody)
+	}
+	
+	
+	test "andy comienza con 200 de felicidad" {
+		assert.equals(200,andy.nivelFelicidad())
+	}
+	test "andy juega con woody y buzz, su felicidad a 693 y ambos buen estado" {
+		self.primeraEscena()
+		assert.equals(693,andy.nivelFelicidad())
+		assert.that(woody.buenEstado() and buzz.buenEstado())
+	}
+	test "andy pierde a buzz y agarra a rex y juega, felicidad 881 y ambos buen estado " {
+		self.segundaEscena()
+		assert.equals(881,andy.nivelFelicidad())
+		assert.that(rex.buenEstado() and buzz.buenEstado())
+	}
+
+	
 test "Moolly juega con woody y su felicidad queda en 493" {
 	molly.manotear(woody)
-	assert.equals(493, molly.felicidad())
+	assert.equals(493, molly.nivelFelicidad())
 }
 
 test "Moolly juega con buzz y su felicidad queda en el maximo que es 500" {
 	molly.manotear(buzz)
-	assert.equals(500, molly.felicidad())
+	assert.equals(500, molly.nivelFelicidad())
 }
 
+test "andy pasa la noche, tiene a woody, buzz y rex pero woody no está en buen estado" {
+	self.novenaEscena()
+	assert.equals(220,andy.nivelFelicidad())
+}
 
 }
