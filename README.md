@@ -18,6 +18,7 @@ Un niño que le encanta jugar con sus juguetes, y de quién vamos a querer saber
 Nuestro amigo tiene en su cuarto varios juguetes que los irá agarrando para luego jugar con todos ellos. A veces decide agarrar 1 juguete, y otras veces 2 o más juguetes. Todos sabemos que estos juguetes también juegan y eso es muy importante en este modelo, ya que pasarán diferentes cosas con esos juguetes cuando jueguen con Andy.
 
 Primero vamos a conocer las cosas que puede hacer Andy:
+- `nivelFelicidad()`: Andy sabe demostrar cual es su nivel de felicidad, y nos dice en que valor está.
 - `agarrarJuguete(juguete]`: Lo toma de su cuarto para usarlo en su aventura.
 - `perderJuguete()`: Pierde de vista al último juguete que agarró y ya no puede jugar con él.
 - `aburrirse(minutos)`: Según la cantidad de minutos, la felicidad de Andy disminuye en 10 por cada minuto de aburrimiento. Su felicidad no puede ser menos que cero. 
@@ -37,7 +38,7 @@ Incorporamos a la hermana de andy:
 <br>
 ### molly
 <img src="https://static.miraheze.org/drawnfeetwiki/8/80/367230_1264713620292_full.jpg" width="150"/>
-Molly, la hermana de Andy, también posee su nivel de felicidad que comienza con 400. Como todavía es una beba, y le encanta llevar de un lado a otro de la casa sus juguetes, suele dejarlos en el cuarto de Andy y además puede `manotear` alguno de los juguetes que Andy eligió para su aventura o que están en el cuarto aunque no los haya elegido Andy, pero solo puede jugar con 1 juguete a la vez. Cada vez que Molly manotea un juguete, se produce el mismo efecto que si jugara Andy con ese juguete. <br>
+Molly, la hermana de Andy, también posee su nivel de felicidad que comienza con 400 y sabe decirnos su `nivelFelicidad()`. Como todavía es una beba, y le encanta llevar de un lado a otro de la casa sus juguetes, suele dejarlos en el cuarto de Andy y además puede `manotear` alguno de los juguetes que Andy eligió para su aventura o que están en el cuarto aunque no los haya elegido Andy, pero solo puede jugar con 1 juguete a la vez. Cada vez que Molly manotea un juguete, se produce el mismo efecto que si jugara Andy con ese juguete. <br>
 
 Vamos a agregar al modelo un juguete más que es de Molly, aunque le gusta dejarlo en el cuarto de Andy:
 - _barbie_: No nos interesa saber su nivel de pintura ya que está fabricado con un material que no se deteriora. No posee nivel de energía ni potenciador. Y puede ser seleccionado por Andy para su juego (no le aporta felicidad) pero cuando lo usa Molly le suma 50 de felicidad.
