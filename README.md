@@ -19,7 +19,7 @@ Nuestro amigo tiene en su cuarto varios juguetes que los irá agarrando para lue
 
 Primero vamos a conocer las cosas que puede hacer Andy:
 - `agarrarJuguete(juguete]`: Lo toma de su cuarto para usarlo en su aventura.
-- `perderJuguete(juguete)`: Lo pierde de vista en su cuarto y ya no puede jugar con él.
+- `perderJuguete()`: Pierde de vista al último juguete que agarró y ya no puede jugar con él.
 - `aburrirse(minutos)`: Según la cantidad de minutos, la felicidad de Andy disminuye en 10 por cada minuto de aburrimiento. Su felicidad no puede ser menos que cero. 
 - `dormir()`: Cuando Andy duerme, su felicidad se restaura a su valor inicial.
 - `jugar()`: Andy juega con todos los juguetes que agarró de su cuarto sin importar su estado.
@@ -27,10 +27,24 @@ Primero vamos a conocer las cosas que puede hacer Andy:
 
 En el cuarto de Andy podemos encontrarnos con los siguientes juguetes que él podría agarrar:
 
-- _woody_: Conoce su nivel de pintura, que comienza en 100, y cada vez que juega con alguien pierde 5 unidades de pintura. Al `tirarDelCordon()` que está en su espalda, sabe decir *alguna* de las `frasesDelCordon` que tiene guardada en su memoria. También sabe `hacerseElGalan(frase)` incorporando frases nuevas en su casi infinita memoria de frases. Cada vez que woody juega con alguien, le aporta una cantidad de felicidad igual a la cantidad de letras de todas las frases que tiene memorizadas. Vamos a considerar que woody está en `buenEstado()` si su nivel de pintura es mayor a 50. 
-- _buzz_: Tiene un nivel de energía, que inicialmente es 100. Cuando un niño o niña juega con él, ejecuta su acto programado que tiene la siguiente secuencia: `volar`, `tirarRayosLaser` en cantidad = 10, volver a `volar` y `tirarRayosLaser` una última vez (cantidad=1). Cada vez vez que buzz vuela, le otorga al niño o niña que juega con él, el doble de su energía actual en felicidad, y a continuación pierde la mitad de su energía. Al tirarRayosLaser recupera 20 puntos de energía por la cantidad de rayos que emite. Vamos a considerar que buzz está en `buenEstado()` cuando su nivel de energía sea mayor a 100. 
+- _woody_: Conoce su nivel de pintura, que comienza en 100, y cada vez que juega con alguien pierde 5 unidades de pintura. Al `tirarDelCordon()` que está en su espalda, sabe decir *alguna* de las `frasesDelCordon` que tiene guardadas en su memoria. Viene de fábrica con las siguientes frases: "Hay una serpiente en mi bota", "Alguien enveneno el abrevadero", "Corre como el viento Tiro al Blanco". También sabe `hacerseElGalan(frase)` incorporando frases nuevas en su casi infinita memoria de frases. Cada vez que woody juega con alguien, le aporta una cantidad de felicidad igual a la cantidad de letras (incluídos los espacios) de todas las frases que tiene memorizadas. Vamos a considerar que woody está en `buenEstado()` si su nivel de pintura es mayor a 50. 
+- _buzz_: Tiene un nivel de energía, que inicialmente es 100. Cuando un niño o niña juega con él, ejecuta su acto programado que tiene la siguiente secuencia: `volar`, `tirarRayosLaser` en cantidad = 10, volver a `volar` y `tirarRayosLaser` una última vez (cantidad=1). Cada vez vez que buzz vuela, le otorga al niño o niña que juega con él, el doble de su energía actual en felicidad, y a continuación pierde la mitad de su energía. Al tirarRayosLaser recupera 5 puntos de energía por cada rayo que emite (si emite 10 rayos, recupera 50 puntos de energía). Vamos a considerar que buzz está en `buenEstado()` cuando su nivel de energía sea mayor a 50. 
 - _rex_: Tiene un potenciador que comienza en 1, y puede duplicarlo cada vez que juega a un videojuego. También conoce en todo momento a su companiero de juego que es otro de los juguete del cuarto de Andy. Inicialmente su companiero es woody, pero puede cambiar.  Cuando un niño o niña juega con rex, aumenta su felicidad en un valor que es el doble del valor del potenciador de rex, y además, juega también con ellos el companiero actual de rex. Consideramos que rex está en `buenEstado()` cuando su companiero también lo está. 
 <br>
+
+### Algunos Test
+
+Y ya vendría siendo hora de hacer algunos test para verificar si esta aventura está resultando divertida. 
+1. Vamos a verificar que la felicidad de andy comienza con 200. 
+2. Supongamos que elige agarrar (por supuesto) a su amigo woody y a buzz, y se dispone a jugar. Como consecuencia, la felicidad de andy subirá hasta 693, woody y buzz quedarán en buen estado. 
+- Luego andy pierde de vista al último juguete que agarró (buzz), y agarra a rex. Nuevamente juega, entonces su felicidad accenderá a 881. Tanto woody como rex están en buen estado. 
+-  Andy vuelve a encontrar a buzz que sigue en buen estado, y lo agarra para jugar con sus 3 juguetes, entonces la felicidad de andy sube a las nubes, alcanzando el nivel de 1334. Ahora woody y rex siguen en buen estado, pero buzz está con baja energía y ya no está en buen estado. 
+-  Hora de que andy vaya a bañarse, no hay forma de que su mamá lo deje seguir jugando si no lo hace, entonces andy se va a aburrir 30 minutos, por lo tanto su felicidad bajará a 581.
+- cuando Andy vuelve del baño, pierde sus juguetes en la pieza, debemos asegurarnos que reciba el mensaje perderJuguete() 3 veces.
+- Y como el baño lo dejó super relajado a andy, entonces se queda dormido. Su felicidad volverá a su valor inicial 200.
+
+3. Cuando se despierta de la siesta, resulta que rex jugó 2 veces a los videojuegos, y su potenciador subió a 4. También rex cambiará de companiero: ahora elige a buzz, que no está en buen estado y rex siempre levanta el ánimo de sus amigos. Entonces andy agarra a rex y va a jugar. Como consecuencia de eso, su felicidad cambia a 473. 
+
 
 Incorporamos a la hermana de andy:
 <br>
